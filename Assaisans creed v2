@@ -1,0 +1,78 @@
+import time
+import random
+global Gold
+global action_choice_menu
+action_choice_menu = None
+Gold = 100
+kills = 0
+#Gun variables
+Current_Gun = 'Pistol'
+Current_Gun_Level = '1'
+Gun_Level_Max = '10'
+Gun_Accurecy = '1'
+Gun_Damage = '1'
+Gun_Fire_Rate = '1'
+#Poison variables
+Current_Poison = 'Basic Poisons'
+Current_Poison_Level = '1'
+Poison_Max_Level = '5'
+Poison_Accurecy = '1'
+Poison_Effectiveness = '1'
+#Bomb variables
+Current_Bomb = 'Small Set Of C4'
+Current_Bomb_Level = '1'
+Bomb_Placement = '1'
+Bomb_Trigger_Timing = '1'
+
+
+
+def name_and_greeting():
+    print('Welcome To Assassins Creed CC Edition')
+    time.sleep(0.8)
+    #name
+    global Name
+    Name = input('Please enter name: ')
+    #greeting
+    print(f'Hello  {Name}. I Am Your Secret Funder...  But You Can Call Me Death In Wraps')
+def MC():
+    global action_choice_menu
+    action_choice_menu = input('Would You Like To 1. Train, 2. Kill, Or Look At 3. Inventory?: ')
+def choice_train():
+    print('Entering Training Room')
+    time.sleep(0.8)
+    print('Hello, And Welcome To The Training Room What Would You Like To Train In?')
+    choice_of_train=input('\n1. Guns \n2. Poison \n3. Bombs \nEnter The Corisponding Number: ')
+    if choice_of_train == '1':
+        Gun_Stats     
+    if choice_of_train == '2':
+        Poison_Stats()
+    #if choice_of_train == '3':
+def Gun_Stats():
+        print('\033[1m'+'Here Are Your Current Gun Stats:'+'\033[0m')#bolds text
+        print(f'Your Current Gun Is: {Current_Gun}')
+        print(f'You Guns Level Is: {Current_Gun_Level}')
+        print(f'Your Gun Accurecy Is: {Gun_Accurecy}')
+        print(f'Your Gun Damage Is: {Gun_Damage}')
+        print(f'Your Guns Fire Rate Is: {Gun_Fire_Rate}')
+def Poison_Stats():
+    print('\033[1m'+'Here Are Your Current Poison Stats:'+'\033[0m')#bolds text
+    print(f'Your Current Poison Is: {Current_Poison}')
+    print(f'You Poisons Level Is: {Current_Poison_Level}')
+    print(f'Your Posion Placemnt Accurecy Is: {Poison_Accurecy}')
+    print(f'Your Poisons Effectiveness Is: {Poison_Effectiveness}')
+def Bomb_Stats():
+    print('\033[1m'+'Here Are Your Current Bomb Stats:'+'\033[0m')#bolds text
+    print(f'Your Current Bomb Is: {Current_Bomb}')
+    print(f'You Bombs Level Is: {Current_Bomb_Level}')
+    print(f'Your Bomb Placement Is: {Bomb_Placement}')
+    print(f'Your Trigger Timing Is: {Bomb_Trigger_Timing}')
+if action_choice_menu == '1':
+    choice_train()
+#if action_choice_menu == '2':
+    #choice_Kill()
+#if action_choice_menu == '3':
+    #choice_Inventory()
+name_and_greeting()
+MC()
+if action_choice_menu == '1':
+    choice_train()

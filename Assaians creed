@@ -1,0 +1,210 @@
+
+
+""""
+def choose_kill():
+    return random.choice(['Tom The Baker', 'Ben The Pilot', 'Billy The Book Maker', 'Harry The Horseback Rider','Tim The Store Clerk'])
+
+def select_hit_miss(gun_training):
+    n = random.random()
+    if n < 1 / (8 - 2 * gun_training):
+        return 'hit'
+    else:
+        return 'miss'
+
+def evaluate_hit_miss(human, computer):
+    if computer == 'hit':
+        time.sleep(1)
+        kills = +1
+        return 'Hit... You Killed Them'
+    else:
+        time.sleep(1)
+        return 'Sorry You Didnt Get Them'
+        
+        
+def select_hit_miss(poison_training):
+    n = random()
+    if n < 1 / (6 - 2 * poison_training):
+        return 'hit'
+    else:
+        return 'miss'
+
+
+def evaluate_hit_miss(human, computer):
+    if computer == 'hit':
+        time.sleep(1)
+        kills = +1
+        return 'The Consumed It... You Killed Them'
+    else:
+        time.sleep(1)
+        return 'Sorry They Didnt Eat It'
+        
+
+def select_hit_miss(bomb_training):
+    n = random()
+    if n < 1 / (4 - 2 * bomb_training):
+        return 'hit'
+    else:
+        return 'miss'    
+    
+        
+def evaluate_hit_miss(human, computer):
+    if computer == 'hit':
+        time.sleep(1)
+        kills = +1
+        return 'BOOM... You Killed Them'
+    else:
+        time.sleep(1)
+        return 'piff... Sorry You Didnt Get Them'
+
+#new imports
+import time
+import random
+Gold = 100
+kills = 0
+#Gun variables
+Gun = 'Pistol'
+Gun_proficiency = 0
+Gun_Max_proficiency = 5
+#Poison variables
+Poison = 'Basic Poisons'
+Poison_proficiency = 1
+Poison_Max_proficiency = 5
+
+#Bomb variables
+Bombs = 'Small Set Of C4'
+Bombs_proficiency = 1
+Bombs_Max_proficiency = 5
+#new functions
+def name_and_greeting():
+    print(' Welcome To Assassins Creed CC Edition')
+    time.sleep(0.8)
+    global Name
+    Name = input('Please enter name: ')
+    print(f'Hello  {Name}. I Am Your Secret Funder...  But You Can Call Me Death In Wraps')
+def MC():
+    global action_choice_menu
+    action_choice_menu = input('Would You Like To 1. Train, 2. Kill, Or Look At 3. Inventory?: ')
+def display_ability_stats():
+    display_gun_stats()
+    display_poison_stats()
+    display_bomb_stats()
+def display_gun_stats():
+    print('\033[1m' + '\n You Gun Stats Are As Follows:' + '\033[0m')
+    print('\nYour Current Gun Is ' + Gun)
+    print(f'Your Proficiency: {Gun_proficiency} \n Max Proficiency: {Gun_Max_proficiency}')
+    print('\n YOUR ATTRIBUTE STATS FOR GUN ARE AS FOLLOWS:')
+    print('\nAccuracy: ' + str(gun_training * 10) + '%')
+    print('Damage: ' + str(gun_training * 10) + '%')
+    print('Fire Rate: ' + str(gun_training * 10) + '%')
+def display_poison_stats():
+    print('\033[1m' + '\nYour Poison Stats Are As Follows:' + '\033[0m')
+    print(f'\nYour Current Poison Is: {Poison}')
+    print(f'\nYour Current Poison Level Is: {Poison_Level} \nMax Level: {Poison_Max_Level}')
+    print('Your Proficiency Level In Poisons Is ' + str(poison_training))
+def display_bomb_stats():
+    print('\033[1m' + '\nYour Bomb Stats Are As Follows:' + '\033[0m')
+    print(f'\nYour Current Bombs Are: {Bombs}')
+    print(f'\nYour Current Bomb Level Is: {Bombs_Level} \nMax Level: {Bombs_Max_Level}')
+    print('Your Proficiency Level In Bombs Is ' + str(bomb_training))
+
+name_and_greeting()
+MC()
+
+## Choose action
+#Training
+if action_choice_menu == '1':
+    print('Entering Training Room...')
+    if Gold < 25:
+        print('You do not have enough gold to train.')
+    time.sleep(0.8)
+    display_ability_stats()
+    time.sleep(0.8)
+    choice = input('What Do You Want To Train In 1. Guns, 2. Poisons, Or 3. Bombs?: ')
+    
+    if choice == '1':#Guns
+            display_gun_stats()
+            time.sleep(0.8)
+            print('Which Attribute Would You Like To Train In? 1. Accuracy 2. Damage 3. Fire Rate')
+            
+            choice = input('Enter The Number Of The Attribute You Want To Train: ')
+            if choice == '1':
+                print('It will cost 25 gold to train in accuracy. Do you want to proceed? (yes/no)')
+                choice = input()
+                if choice == 'yes':
+                    gun_training += 1
+                    Gold -= 25
+                    for i in range(4):
+                        print('Training...')
+                        time.sleep(2)
+                    print('Done!!!')
+            if choice == '2':
+                print('It will cost 25 gold to train in damage. Do you want to proceed? (yes/no)')
+                choice = input()
+                if choice == 'yes':
+                    poison_training += 1
+                    Gold -= 25
+                    for i in range(4):
+                        print('Training...')
+                        time.sleep(2)
+                    print('Done!!!')
+            if choice == '3':
+                print('It will cost 25 gold to train in fire rate. Do you want to proceed? (yes/no)')
+                choice = input()
+                if choice == 'yes':
+                    bomb_training += 1
+                    Gold -= 25
+                    for i in range(4):
+                        print('Training...')
+                        time.sleep(2)
+                    print('Done!!!')
+    
+#Training;
+#Inventory
+if action_choice_menu == '3':
+    print(8)
+#Ineventory;
+#Kill
+if action_choice_menu == '2':
+    print(8)
+#Kill;
+"""    """
+    if choice1 == 'inventory':#1
+        print(f'You Have A Pistol, Basic Poisons, A Small Set Of C4, {kills} Kills,A Proficiency Level Of {gun_training} In Guns, A Proficiency Level Of {poison_training} In Poison, And A Proficiency Level Of {bomb_training} In Bomb Training...')
+        time.sleep(1)
+        choice1 = input('Would You Like To Go Back To Options?: ')
+        if choice1 == 'yes':
+            print('Hello ' +Name+ ' I Am Your AI Assistant, Would You Like To Train, ')
+            choice1 = input('Kill, Or Look At Inventory?: ')
+    ## kill
+    if choice1 == 'kill':#1
+        print('Going In For The Kill...')
+        time.sleep(1)
+        print('Subject Found... ')
+        time.sleep(1)
+        target = choose_kill()
+        choice1 = input(f'Are you ready to kill {choose_kill()}?: ')
+        if choice1 == 'yes':
+            time.sleep(3)
+            if target == 'Tom The Baker' or target == 'Tim The Store Clerk':
+                print('Taking Down A Person Who Sells Food And Other Sorts With Only An Alchemy Set... This Will Be An Easy Feat')
+                computer = select_hit_miss(poison_training)
+                result = evaluate_hit_miss(choice1, computer)
+                print(result)
+            if target == 'Harry The Horseback Rider':
+                print('You Implant An Explosive On His Saddle')
+                computer = select_hit_miss(bomb_training)
+                result = evaluate_hit_miss(choice1, computer)
+                print(result)
+            if target == 'Ben The Pilot':
+                print('Before Liftoff You Mistakenly Attach A Bomb To The Left Wheel Of The Aircraft')
+                computer = select_hit_miss(bomb_training)
+                result = evaluate_hit_miss(choice1, computer)
+                print(result)
+            if target == 'Billy The Book Maker':
+                print('You See Him Stupidbly Standing There Doing His Craft... You Pull Out Your Trusty Pistol')
+                computer = select_hit_miss(gun_training)
+                result = evaluate_hit_miss(choice1, computer)
+                print(result)
+                choice1 = input('Now What?: ')
+            
+"""
